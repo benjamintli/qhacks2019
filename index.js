@@ -1,3 +1,9 @@
+var vrView = new VRView.Player('#vrview', {
+  video: './test2.mp4',
+  default_yaw: 90,
+  is_yaw_only: true
+  // is_stereo: true
+});
 function startListener(){
   document.getElementById('not-found').style.visibility = 'hidden';
   var recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition || window.mozSpeechRecognition || window.msSpeechRecognition)();
