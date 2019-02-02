@@ -1,3 +1,7 @@
+var vrView = new VRView.Player('#vrview', {
+  video: './TEST2.mp4',
+  is_stereo: true
+});
 function startListener(){
   document.getElementById('not-found').style.visibility = 'hidden';
   var recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition || window.mozSpeechRecognition || window.msSpeechRecognition)();
@@ -34,10 +38,14 @@ function makeRequest(query) {
             document.getElementById('not-found').style.visibility = 'visible';
             return
           }   
+          // return srchItems[0].id.videoId
           console.log(srchItems)
           document.getElementById('ui').style.display = 'none';   
           document.getElementById('yt').style.display = 'block';   
-          document.getElementById('yt').src = 'https://www.youtube.com/embed/' + srchItems[0].id.videoId + '?autoplay=1'   
+          
+          // 'https://www.youtube.com/embed/r2zLcL8ffQg?enablejsapi=1&origin=http%3A%2F%2F127.0.0.1%3A8887&widgetid=1'
+          document.getElementById('yt').src = 'https://www.youtube.com/embed/' + srchItems[0].id.videoId + '?autoplay=1' 
+
           $.each(srchItems, function(index, item) {
           vidTitle = item.snippet.title;  
           vidThumburl =  item.snippet.thumbnails.default.url;                 
