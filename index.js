@@ -1,6 +1,6 @@
 var vrView = new VRView.Player('#vrview', {
-  video: './TEST2.mp4',
-  is_stereo: true
+  video: './tester.mp4'
+  // is_stereo: true
 });
 function startListener(){
   document.getElementById('not-found').style.visibility = 'hidden';
