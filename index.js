@@ -27,6 +27,12 @@ function keyWordsearch(query){
   makeRequest(query);
   });
 }
+
+function readFact(fact){
+  //https://texttospeech.googleapis.com/v1beta1/text:synthesize
+  responsiveVoice.speak(fact);
+}
+
 function makeRequest(query) {
   var request = gapi.client.youtube.search.list({
           q: query,
@@ -57,7 +63,8 @@ function makeRequest(query) {
 }
 
 function queryWikipedia(place) {
-        var URL = 'https://crossorigin.me/https://en.wikipedia.org/w/api.php?format=json&action=query&prop=extracts&exintro&explaintext&redirects=1';
+
+        var URL = 'https://en.wikipedia.org/w/api.php?format=json&action=query&prop=extracts&exintro&explaintext&redirects=1';
 
         URL += "&titles=" + place;
         request(URL);
@@ -80,12 +87,12 @@ function queryWikipedia(place) {
                   //  create a loop function
                setTimeout(function () {    //  call a 3s setTimeout when the loop is called
 
-                  document.getElementById('facts').innerHTML = result[i];      //  your code here
+                  readFact(result[i])     //  your code here
                   i++;                     //  increment the counter
                   if (i < result.length) {            //  if the counter < 10, call the loop function
                      myLoop(result);             //  ..  again which will trigger another
                   }                        //  ..  setTimeout()
-               }, 6000)
+               }, 9000)
             }
 
 
@@ -95,6 +102,7 @@ function queryWikipedia(place) {
 
         function request(URL) {
             const xhr = new XMLHttpRequest();
+
             console.log(xhr)
             xhr.onreadystatechange = function(e) {
               if (xhr.readyState === 4) {
@@ -109,6 +117,8 @@ function queryWikipedia(place) {
               // Well, it took to long do some code here to handle that
             }
             xhr.open('get', URL, true)
+          //  xhr.setRequestHeader("Origin", "http://127.0.0.1:8887/");
+            //xhr.setRequestHeader("Content-Type", "application/json; charset=UTF-8");
             xhr.send();
           }
 
