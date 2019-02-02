@@ -13,16 +13,22 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 </head>
 
-<body onclick='startListener()'>
-  <div class = "mainDiv" id="ui">
+<body  onclick="startListener()" style ="height:100%" >
+  <div class = "mainDiv align-middle" id="ui">
       <p class="col-12"> What would you like to see? </p>
       <img class= "col-12" src = "img/defualt-bitmoji.png">
       <p id="speechInText"> </p>
+
       <h1 id='not-found'>No Results Found</h1>
   </div>
-  <!-- <div id="player"></div> -->
   <iframe id='yt' src="" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-  <!-- <div id='vrview'></div> -->
+
+  <footer class="page-footer">
+    <div class = "row" style = "margin:auto; margin-bottom: 5%;text-align:center;">
+      <p class = "speech-bubble col-10" id = "facts" style="padding:1%;"> Did you know? random fact. </p>
+      <img class= "col-2" src = "img/point.png" style="width:100%px; height: 100%;">
+    </div>
+    </footer>
 </body>
 
 
