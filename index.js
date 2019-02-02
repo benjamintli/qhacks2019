@@ -56,7 +56,7 @@ function makeRequest(query) {
 }
 
 function queryWikipedia(place) {
-        var URL = 'https://en.wikipedia.org/w/api.php?format=json&action=query&prop=extracts&exintro&explaintext&redirects=1';
+        var URL = 'https://crossorigin.me/https://en.wikipedia.org/w/api.php?format=json&action=query&prop=extracts&exintro&explaintext&redirects=1';
 
         URL += "&titles=" + place;
         request(URL);
