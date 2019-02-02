@@ -4,7 +4,7 @@
 }
 
 footer {
-    position: fixed;
+    /* position: fixed; */
     height: 100px;
     margin: auto;
     bottom: 0;
