@@ -1,9 +1,9 @@
-var vrView = new VRView.Player('#vrview', {
-  video: './test2.mp4',
-  default_yaw: 90,
-  is_yaw_only: true
-  // is_stereo: true
-});
+// var vrView = new VRView.Player('#vrview', {
+//   video: './test2.mp4',
+//   default_yaw: 90,
+//   is_yaw_only: true
+//   // is_stereo: true
+// });
 function startListener(){
   document.getElementById('not-found').style.visibility = 'hidden';
   var recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition || window.mozSpeechRecognition || window.msSpeechRecognition)();
@@ -20,7 +20,7 @@ function startListener(){
 
 function keyWordsearch(query){
   // Our unique API key
-  gapi.client.setApiKey('AIzaSyBhHHQPdj6tzL_5HOWOII6vQ9c2bAWLz9A');
+  gapi.client.setApiKey('AIzaSyCFjtMcGLho2HkqVjRHxXoUlGxsP257wlc');
   gapi.client.load('youtube', 'v3', function() {
   makeRequest(query);
   });
