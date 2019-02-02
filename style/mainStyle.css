@@ -1,7 +1,42 @@
 .mainDiv{
   margin: auto;
-  
+
 }
+
+footer {
+    position: fixed;
+    height: 100px;
+    margin: auto;
+    bottom: 0;
+    width: 100%;
+    float: bottom;
+}
+
+.speech-bubble {
+	position: relative;
+	background: #f7f7f7;
+	border-radius: .4em;
+  color: black;
+  padding:auto;
+  text-align: left;
+}
+
+.speech-bubble:after {
+	content: '';
+	position: absolute;
+	right: 0;
+	top: 50%;
+	width: 0;
+	height: 0;
+	border: 20px solid transparent;
+	border-left-color: #f7f7f7;
+	border-right: 0;
+	border-bottom: 0;
+	margin-top: -10px;
+	margin-right: -20px;
+}
+
+
 #yt {
 	display: none;
 }
@@ -67,7 +102,7 @@ body {
 	padding: 0;
 	overflow: hidden;
   }
-  
+
   /* Position the button on the bottom of the page. */
   #ui {
 	position: absolute;
