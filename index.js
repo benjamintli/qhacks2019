@@ -1,9 +1,9 @@
-var vrView = new VRView.Player('#vrview', {
-  video: './TEST2.mp4',
-  default_yaw: 90,
-  is_yaw_only: true
-  // is_stereo: true
-});
+// var vrView = new VRView.Player('#vrview', {
+//   video: './TEST2.jpg',
+//   default_yaw: 90,
+//   is_yaw_only: true
+//   // is_stereo: true
+// });
 function startListener(){
   document.getElementById('not-found').style.visibility = 'hidden';
   var recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition || window.mozSpeechRecognition || window.msSpeechRecognition)();
@@ -43,7 +43,7 @@ function makeRequest(query) {
           }
           console.log(srchItems)
           document.getElementById('ui').style.display = 'none';
-          document.getElementById('vrview').style.display = 'block';
+          document.getElementById('yt').style.display = 'block';
           // document.getElementById('yt').src = 'https://www.youtube.com/embed/' + srchItems[0].id.videoId + '?autoplay=1'
           // $.each(srchItems, function(index, item) {
           // vidTitle = item.snippet.title;
