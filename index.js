@@ -13,6 +13,7 @@ function startListener(){
 }
 
 function keyWordsearch(query){
+  // Our unique API key
   gapi.client.setApiKey('AIzaSyBhHHQPdj6tzL_5HOWOII6vQ9c2bAWLz9A');
   gapi.client.load('youtube', 'v3', function() {
   makeRequest(query);
@@ -24,7 +25,7 @@ function makeRequest(query) {
           part: 'snippet', 
           maxResults: 10,
           type: 'video',
-          channelId: 'UC6AXBF-78lNa3_TjAIWZWmQ'
+          channelId: 'UC6AXBF-78lNa3_TjAIWZWmQ' //channel for teh VR videos
   });
   request.execute(function(response)  {                                                                                    
           $('#results').empty()
@@ -32,7 +33,11 @@ function makeRequest(query) {
           if (!srchItems || srchItems.length < 1) {
             document.getElementById('not-found').style.visibility = 'visible';
             return
-          }                
+          }   
+          console.log(srchItems)
+          document.getElementById('ui').style.display = 'none';   
+          document.getElementById('yt').style.display = 'block';   
+          document.getElementById('yt').src = 'https://www.youtube.com/embed/' + srchItems[0].id.videoId + '?autoplay=1'   
           $.each(srchItems, function(index, item) {
           vidTitle = item.snippet.title;  
           vidThumburl =  item.snippet.thumbnails.default.url;                 
@@ -42,4 +47,3 @@ function makeRequest(query) {
   })  
 })  
 }
-
