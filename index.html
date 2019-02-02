@@ -3,8 +3,11 @@
 <html lang="en">
 <head>
 <title>Web VR boilerplate</title>
+<script src = "speechRec.js"></script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0, shrink-to-fit=no">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="style/mainStyle.css">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -30,18 +33,15 @@ body {
   z-index: 1;
 }
 
-a#magic-window {
-  display: block;
-  color: white;
-  margin-top: 1em;
-}
 </style>
 </head>
 
 <body>
-  <div id="ui">
-    <div id="vr-button"></div>
-    <a id="magic-window" href="#">Try it without a headset</a>
+  <div clas = "mainDiv" id="ui">
+      <p> What would you like to see? </p>
+      <img class= "col-sm-12" src = "img/defualt-bitmoji.png">
+      <button class= "col-sm-6 talkButton" onclick="startListener()">Listen</button>
+      <p id="speechInText"> </p>
   </div>
 </body>
 
@@ -167,7 +167,6 @@ function onLoad() {
   cube.position.set(0, controls.userHeight, -1);
 
   // Add cube mesh to your three.js scene
-  scene.add(cube);
 
   window.addEventListener('resize', onResize, true);
   window.addEventListener('vrdisplaypresentchange', onResize, true);
@@ -275,6 +274,7 @@ function setStageDimensions(stage) {
 }
 
 window.addEventListener('load', onLoad);
+
 
 </script>
 
