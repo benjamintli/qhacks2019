@@ -1,9 +1,9 @@
-// var vrView = new VRView.Player('#vrview', {
-//   video: './test2.mp4',
-//   default_yaw: 90,
-//   is_yaw_only: true
-//   // is_stereo: true
-// });
+var vrView = new VRView.Player('#vrview', {
+  video: './TEST2.mp4',
+  default_yaw: 90,
+  is_yaw_only: true
+  // is_stereo: true
+});
 function startListener(){
   document.getElementById('not-found').style.visibility = 'hidden';
   var recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition || window.mozSpeechRecognition || window.msSpeechRecognition)();
@@ -16,7 +16,6 @@ function startListener(){
       console.log(event.results[0][0].transcript);
       queryWikipedia(event.results[0][0].transcript)
       keyWordsearch(event.results[0][0].transcript);
-      queryWikipedia(event.results[0][0].transcript)
   };
 }
 
@@ -44,15 +43,15 @@ function makeRequest(query) {
           }
           console.log(srchItems)
           document.getElementById('ui').style.display = 'none';
-          document.getElementById('yt').style.display = 'block';
-          document.getElementById('yt').src = 'https://www.youtube.com/embed/' + srchItems[0].id.videoId + '?autoplay=1'
-          $.each(srchItems, function(index, item) {
-          vidTitle = item.snippet.title;
-          vidThumburl =  item.snippet.thumbnails.default.url;
-          vidThumbimg = '<pre><img id="thumb" src="'+vidThumburl+'" alt="No  Image Available." style="width:204px;height:128px"></pre>';
+          document.getElementById('vrview').style.display = 'block';
+          // document.getElementById('yt').src = 'https://www.youtube.com/embed/' + srchItems[0].id.videoId + '?autoplay=1'
+          // $.each(srchItems, function(index, item) {
+          // vidTitle = item.snippet.title;
+          // vidThumburl =  item.snippet.thumbnails.default.url;
+          // vidThumbimg = '<pre><img id="thumb" src="'+vidThumburl+'" alt="No  Image Available." style="width:204px;height:128px"></pre>';
 
-          $('#results').append('<pre>' + vidTitle + vidThumbimg +  '</pre>');
-  })
+          // $('#results').append('<pre>' + vidTitle + vidThumbimg +  '</pre>');
+  // })
 })
 }
 
