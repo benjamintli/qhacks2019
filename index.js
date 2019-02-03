@@ -8,7 +8,7 @@ function startListener(){
   var imageSelector = document.querySelector('#image')
   var textSelector = document.querySelector('#text')
   document.querySelector('#facts').setAttribute('visible', false)
-  var listen = generateEmoji();
+  var listen = generateListen("listen");
   imageSelector.setAttribute('src', listen)
   imageSelector.setAttribute('visible',true)
   textSelector.setAttribute('visible',true)
@@ -80,6 +80,8 @@ function keyWordsearch(query){
     else {
       imageSelector.setAttribute('visible',true)
       textSelector.setAttribute('visible',true)
+      listen = generateListen("hm");
+      imageSelector.setAttribute('src', listen)
       textSelector.setAttribute('value','Didn\'t catch that')
     }
 }
@@ -163,7 +165,7 @@ function queryWikipedia(place) {
     }
 
     var select = getRandomInt(1,4);
-    console.log(select);
+    
     if(select == 1){
        return guide= "Ben";}
     else if(select ==2){
@@ -176,25 +178,30 @@ function queryWikipedia(place) {
      
   }
 
+  var bitmojiID = {
+    "pointing_right" : 10207805,
+            "pointing_left": 10212012,
+            "pointing_look": 10222099,
+            "cat" : 9090400,
+            "wow" :9284933,
+            "vacation" :10178725,
+            "cool": 10215119,
+            "eat": 10219583,
+            "hm" : 10221121,
+            "listen": 10215354
+  };
+
 var character = document.querySelector('my-image');
 
-function generateEmoji(){
-  /*var bitmojiID = [
-     10207805,
-    10212012,
-     10222099,
-    9090400,
-   9284933,
-    10178725,
-    10215119,
-    10219583
-  ];*/
+function generateListen(position){
+  
   var guides = choosingGuide();
-  console.log(guides);
+  
   var person = tourguides[guides];
   //var action = bitmojiID[Math.floor(Math.random() * bitmojiID.length)];
-  var bitch = url_1+"10215354"+person;
+  var bitch = url_1+bitmojiID[position]+person;
   //character.setAttribute('src', bitch); 
-  console.log(bitch);
+  
   return bitch;
 }
+
