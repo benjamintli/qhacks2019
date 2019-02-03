@@ -5,7 +5,9 @@
 //   // is_stereo: true
 // });
 function startListener(){
-  document.getElementById('not-found').style.visibility = 'hidden';
+  var el = document.querySelector('#image')
+  el.setAttribute('visible',true)
+  // document.getElementById('not-found').style.visibility = 'hidden';
   var recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition || window.mozSpeechRecognition || window.msSpeechRecognition)();
   recognition.lang = 'en-US';
   recognition.interimResults = false;
@@ -20,11 +22,38 @@ function startListener(){
 }
 
 function keyWordsearch(query){
-  // Our unique API key
-  gapi.client.setApiKey('AIzaSyCFjtMcGLho2HkqVjRHxXoUlGxsP257wlc');
-  gapi.client.load('youtube', 'v3', function() {
-  makeRequest(query);
-  });
+    var el = document.querySelector('#image')
+    var el2 = document.querySelector('#text')
+    if (query.toLowerCase().includes('temple') || query.toLowerCase().includes('thailand')){
+      el.setAttribute('visible',false)
+      el2.setAttribute('visible',false)
+      document.querySelector('a-videosphere').setAttribute('src','#safari')
+      document.querySelector('#temple').play()
+    }
+    else if (query.toLowerCase().includes('alps')) {
+      el.setAttribute('visible',false)
+      el2.setAttribute('visible',false)
+      document.querySelector('a-videosphere').setAttribute('src','#alps')
+      document.querySelector('#alps').play()
+    } 
+    else if (query.toLowerCase().includes('beach') || query.toLowerCase().includes('rocky')) {
+      el.setAttribute('visible',false)
+      el2.setAttribute('visible',false)
+      document.querySelector('a-videosphere').setAttribute('src','#rocky-beach')
+      document.querySelector('#rocky-beach').play()
+    } 
+    else if (query.toLowerCase().includes('water')) {
+      el.setAttribute('visible',false)
+      el2.setAttribute('visible',false)
+      document.querySelector('a-videosphere').setAttribute('src','#water')
+      document.querySelector('#water').play()
+    } 
+    else if (query.toLowerCase().includes('amsterdam')) {
+      el.setAttribute('visible',false)
+      el2.setAttribute('visible',false)
+      document.querySelector('a-videosphere').setAttribute('src','#city')
+      document.querySelector('#city').play()
+    } 
 }
 function makeRequest(query) {
   var request = gapi.client.youtube.search.list({

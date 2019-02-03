@@ -37,13 +37,25 @@ footer {
 }
 
 
-#yt {
+#safari {
 	display: block;
 }
-
-#vrview {
+/* #Alps {
 	display: none;
 }
+
+#rocky {
+	display: none;
+}
+#water {
+	display: none;
+}
+#park {
+	display: none;
+}
+#city {
+	display: none;
+} */
 .talkButton {
 	-moz-box-shadow:inset 0px 1px 3px 0px #91b8b3;
 	-webkit-box-shadow:inset 0px 1px 3px 0px #91b8b3;
