@@ -5,7 +5,7 @@
 //   // is_stereo: true
 // });
 function startListener(){
-  document.getElementById('not-found').style.visibility = 'hidden';
+  // document.getElementById('not-found').style.visibility = 'hidden';
   var recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition || window.mozSpeechRecognition || window.msSpeechRecognition)();
   recognition.lang = 'en-US';
   recognition.interimResults = false;
@@ -55,8 +55,9 @@ function makeRequest(query) {
 })
 }
 
+
 function queryWikipedia(place) {
-        var URL = 'https://crossorigin.me/https://en.wikipedia.org/w/api.php?format=json&action=query&prop=extracts&exintro&explaintext&redirects=1';
+        var URL = 'https://en.wikipedia.org/w/api.php?format=json&action=query&prop=extracts&exintro&explaintext&redirects=1';
 
         URL += "&titles=" + place;
         request(URL);
@@ -71,24 +72,9 @@ function queryWikipedia(place) {
             result = result[Object.keys(result)[0]].extract
             result = result.split(". ");
             console.log(result);
-
-            var i  =1;
-            console.log(result.length);                    //  set your counter to 1
-            //document.getElementById('facts').style.display = "block";
-            function myLoop (result) {
-                  //  create a loop function
-               setTimeout(function () {    //  call a 3s setTimeout when the loop is called
-
-                  document.getElementById('facts').innerHTML = result[i];      //  your code here
-                  i++;                     //  increment the counter
-                  if (i < result.length) {            //  if the counter < 10, call the loop function
-                     myLoop(result);             //  ..  again which will trigger another
-                  }                        //  ..  setTimeout()
-               }, 6000)
-            }
-
-
-            myLoop(result);
+            var myJsonString = JSON.stringify(result);
+            console.log(myJsonString[0]);
+            return myJsonString;
 
         };
 
@@ -110,7 +96,5 @@ function queryWikipedia(place) {
             xhr.open('get', URL, true)
             xhr.send();
           }
-
-
-
+        
     }

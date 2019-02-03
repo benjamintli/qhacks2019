@@ -17,7 +17,7 @@
   
 </head>
 
-<body  onclick="startListener()" style ="height:100%" >
+<body style ="height:100%" >
   <!-- <div class = "mainDiv align-middle" id="ui">
       <p class="col-12"> What would you like to see? </p>
       <p id="speechInText"> </p>
@@ -27,7 +27,9 @@
   <script>
 
   </script>
-  <a-scene id='yt' color="#414" renderer="colorManagement: true;">
+  <a-scene id='yt' color="#414" renderer="colorManagement: true;" onclick="startListener()">
+    <a-entity id="river" geometry="primitive: plane" material="color: blue"
+     position="-10 0 0" sound="src: url(pump.mp3); autoplay: true"></a-entity>
     <a-assets>
       <!-- <video id="video" autoplay loop crossorigin="anonymous" controls>
         <source src="./TEST2.mp4"></source>
