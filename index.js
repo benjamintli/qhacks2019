@@ -6,7 +6,10 @@
 // });
 function startListener(){
   var el = document.querySelector('#image')
+  var el2 = document.querySelector('#text')
   el.setAttribute('visible',true)
+  el2.setAttribute('visible',true)
+  el2.setAttribute('value','Speak into the mic')
   // document.getElementById('not-found').style.visibility = 'hidden';
   var recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition || window.mozSpeechRecognition || window.msSpeechRecognition)();
   recognition.lang = 'en-US';
@@ -54,6 +57,11 @@ function keyWordsearch(query){
       document.querySelector('a-videosphere').setAttribute('src','#city')
       document.querySelector('#city').play()
     } 
+    else {
+      el.setAttribute('visible',true)
+      el2.setAttribute('visible',true)
+      el2.setAttribute('value','Didn\'t catch that')
+    }
 }
 function makeRequest(query) {
   var request = gapi.client.youtube.search.list({
@@ -73,14 +81,6 @@ function makeRequest(query) {
           console.log(srchItems)
           document.getElementById('ui').style.display = 'none';
           document.getElementById('yt').style.display = 'block';
-          // document.getElementById('yt').src = 'https://www.youtube.com/embed/' + srchItems[0].id.videoId + '?autoplay=1'
-          // $.each(srchItems, function(index, item) {
-          // vidTitle = item.snippet.title;
-          // vidThumburl =  item.snippet.thumbnails.default.url;
-          // vidThumbimg = '<pre><img id="thumb" src="'+vidThumburl+'" alt="No  Image Available." style="width:204px;height:128px"></pre>';
-
-          // $('#results').append('<pre>' + vidTitle + vidThumbimg +  '</pre>');
-  // })
 })
 }
 
