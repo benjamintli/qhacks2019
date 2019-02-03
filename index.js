@@ -8,9 +8,9 @@ function startListener(){
   var imageSelector = document.querySelector('#image')
   var textSelector = document.querySelector('#text')
   document.querySelector('#facts').setAttribute('visible', false)
-  imageSelector.setAttribute('src', '#my-image')
-  var listen = generateEmoji();
+  var listen = generateListen("listen");
   imageSelector.setAttribute('src', listen)
+  document.querySelector('#facts2').setAttribute('visible', false)
   imageSelector.setAttribute('visible',true)
   textSelector.setAttribute('visible',true)
   textSelector.setAttribute('value','Speak into the mic')
@@ -40,50 +40,67 @@ function keyWordsearch(query){
     var imageSelector = document.querySelector('#image')
     var textSelector = document.querySelector('#text')
     if (query.toLowerCase().includes('temple') || query.toLowerCase().includes('thailand')){
-      imageSelector.setAttribute('src', '#bitmoji2')
+      listen = generateListen("pointing_look")
+      imageSelector.setAttribute('src', listen)
       textSelector.setAttribute('visible',false)
       var output = setFacts('temple.json')
       document.querySelector('#facts').setAttribute('visible', true)
       document.querySelector('#facts').setAttribute('value', output.facts[0])
+      document.querySelector('#facts2').setAttribute('visible', true)
+      document.querySelector('#facts2').setAttribute('value', output.facts[1])
       document.querySelector('a-videosphere').setAttribute('src','#temple')
       document.querySelector('#temple').play()
     }
-    else if (query.toLowerCase().includes('alps') || query.toLowerCase().includes('swiss')) {
+    else if (query.toLowerCase().includes('swiss') || query.toLowerCase().includes('alps')) {
+      listen = generateListen("cat")
+      imageSelector.setAttribute('src', listen)
       imageSelector.setAttribute('src', '#bitmoji2')
       textSelector.setAttribute('visible',false)
       document.querySelector('a-videosphere').setAttribute('src','#alps')
       document.querySelector('#alps').play()
       var output = setFacts('alps.json')
+      document.querySelector('#facts').setAttribute('visible', true)
       document.querySelector('#facts').setAttribute('value', output.facts[0])
+      document.querySelector('#facts2').setAttribute('visible', true)
+      document.querySelector('#facts2').setAttribute('value', output.facts[1])
       console.log(output.facts[0]);
     } 
     else if (query.toLowerCase().includes('beach') || query.toLowerCase().includes('rocky')) {
-      imageSelector.setAttribute('src', '#bitmoji2')
+      listen = generateListen("cat")
+      imageSelector.setAttribute('src', listen)
       textSelector.setAttribute('visible',false)
       document.querySelector('a-videosphere').setAttribute('src','#rocky-beach')
       document.querySelector('#rocky-beach').play()
       var output = setFacts('beach.json')
       document.querySelector('#facts').setAttribute('visible', true)
       document.querySelector('#facts').setAttribute('value', output.facts[0])
+      document.querySelector('#facts2').setAttribute('visible', true)
+      document.querySelector('#facts2').setAttribute('value', output.facts[1])
     } 
     else if (query.toLowerCase().includes('water')) {
-      imageSelector.setAttribute('src', '#bitmoji2')
+      listen = generateListen("wow")
+      imageSelector.setAttribute('src', listen)
       textSelector.setAttribute('visible',false)
       document.querySelector('a-videosphere').setAttribute('src','#water')
       document.querySelector('#water').play()
     } 
     else if (query.toLowerCase().includes('amsterdam')) {
-      imageSelector.setAttribute('src', '#bitmoji2')
+      listen = generateListen("cat")
+      imageSelector.setAttribute('src', listen)
       textSelector.setAttribute('visible',false)
       document.querySelector('a-videosphere').setAttribute('src','#city')
       document.querySelector('#city').play()
       var output = setFacts('amsterdam.json')
       document.querySelector('#facts').setAttribute('visible', true)
       document.querySelector('#facts').setAttribute('value', output.facts[0])
+      document.querySelector('#facts2').setAttribute('visible', true)
+      document.querySelector('#facts2').setAttribute('value', output.facts[1])
     } 
     else {
       imageSelector.setAttribute('visible',true)
       textSelector.setAttribute('visible',true)
+      listen = generateListen("hm");
+      imageSelector.setAttribute('src', listen)
       textSelector.setAttribute('value','Didn\'t catch that \nPress the button and try again')
     }
 }
@@ -146,7 +163,7 @@ function queryWikipedia(place) {
     }
 
     var select = getRandomInt(1,4);
-    console.log(select);
+    
     if(select == 1){
        return guide= "Ben";}
     else if(select ==2){
@@ -159,25 +176,30 @@ function queryWikipedia(place) {
      
   }
 
+  var bitmojiID = {
+    "pointing_right" : 10207805,
+            "pointing_left": 10212012,
+            "pointing_look": 10222099,
+            "cat" : 9090400,
+            "wow" :9284933,
+            "vacation" :10178725,
+            "cool": 10215119,
+            "eat": 10219583,
+            "hm" : 10221121,
+            "listen": 10215354
+  };
+
 var character = document.querySelector('my-image');
 
-function generateEmoji(){
-  /*var bitmojiID = [
-     10207805,
-    10212012,
-     10222099,
-    9090400,
-   9284933,
-    10178725,
-    10215119,
-    10219583
-  ];*/
+function generateListen(position){
+  
   var guides = choosingGuide();
-  console.log(guides);
+  
   var person = tourguides[guides];
   //var action = bitmojiID[Math.floor(Math.random() * bitmojiID.length)];
-  var bitch = url_1+"10215354"+person;
+  var bitch = url_1+bitmojiID[position]+person;
   //character.setAttribute('src', bitch); 
-  console.log(bitch);
+  
   return bitch;
 }
+
