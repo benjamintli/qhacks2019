@@ -8,7 +8,8 @@ function startListener(){
 
   var el = document.querySelector('#image')
   var el2 = document.querySelector('#text')
-  el.setAttribute('src', '#my-image')
+  var listen = generateEmoji();
+  el.setAttribute('src', listen)
   el.setAttribute('visible',true)
   el2.setAttribute('visible',true)
   el2.setAttribute('value','Speak into the mic')
@@ -142,6 +143,59 @@ function queryWikipedia(place) {
             xhr.send();
           }
 
-
+      
 
     }
+
+    
+  var url_1 = "https://sdk.bitmoji.com/render/panel/"
+  var tourguides = {
+      "Ben" : "-AUJoNkQxx3e6AU8SXbVVRmXIdXZPEg-v1.png?transparent=1&palette=1",
+      "Cache" : "-AUJoNkQxQWlVEr8mIwpp1lF8GTDokg-v1.png?transparent=1&palette=1&fbclid=IwAR0gjzgGHodoa1vpLNLRmYGIGYrOktzoxUB1fe6gRUckpyOjlAatb97nt34",
+      "Johnny" : "-AUJoNkQxLNPJ~WfXuhaYGVp7wC~p~w-v1.png?transparent=1&palette=1&fbclid=IwAR2EJ0ENHgP4zOt2qjObDOWzcBgY27hvPQgYjgyyVdAiVPjUKLVvXBUGKrE",
+      "Greg" : "-AUJoNkQxUDfpQvOt~8bNTgjnsTWx0Q-v1.png?transparent=1&palette=1&fbclid=IwAR2skmX3xgrFknDyurPFRlqHPv2ZLfmLSy9aEnUE--TdLS8GUZ8lrYzZO0o"
+  };
+  var guide = "";
+  function choosingGuide(){
+    function getRandomInt(min, max){
+      min = Math.ceil(min);
+      max = Math.floor(max);
+      return  Math.floor(Math.random() * (max - min +1)) + min;
+    }
+
+    var select = getRandomInt(1,4);
+    console.log(select);
+    if(select == 1){
+       return guide= "Ben";}
+    else if(select ==2){
+        return guide = "Cache";
+    }
+    else if(select== 3){
+      return guide = "Johnny";}
+    else
+     return guide = "Greg";
+     
+  }
+
+var character = document.querySelector('my-image');
+
+function generateEmoji(){
+  /*var bitmojiID = [
+     10207805,
+    10212012,
+     10222099,
+    9090400,
+   9284933,
+    10178725,
+    10215119,
+    10219583
+  ];*/
+  var guides = choosingGuide();
+  console.log(guides);
+  var person = tourguides[guides];
+  //var action = bitmojiID[Math.floor(Math.random() * bitmojiID.length)];
+  var bitch = url_1+"10215354"+person;
+  //character.setAttribute('src', bitch); 
+  console.log(bitch);
+  return bitch;
+}
