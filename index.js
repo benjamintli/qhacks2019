@@ -8,7 +8,7 @@ function startListener(){
   var imageSelector = document.querySelector('#image')
   var textSelector = document.querySelector('#text')
   document.querySelector('#facts').setAttribute('visible', false)
-
+  imageSelector.setAttribute('src', '#my-image')
   imageSelector.setAttribute('visible',true)
   textSelector.setAttribute('visible',true)
   textSelector.setAttribute('value','Speak into the mic')
@@ -38,7 +38,7 @@ function keyWordsearch(query){
     var imageSelector = document.querySelector('#image')
     var textSelector = document.querySelector('#text')
     if (query.toLowerCase().includes('temple') || query.toLowerCase().includes('thailand')){
-      imageSelector.setAttribute('visible',false)
+      imageSelector.setAttribute('src', '#bitmoji2')
       textSelector.setAttribute('visible',false)
       var output = setFacts('temple.json')
       document.querySelector('#facts').setAttribute('visible', true)
@@ -47,7 +47,7 @@ function keyWordsearch(query){
       document.querySelector('#temple').play()
     }
     else if (query.toLowerCase().includes('alps')) {
-      imageSelector.setAttribute('visible',false)
+      imageSelector.setAttribute('src', '#bitmoji2')
       textSelector.setAttribute('visible',false)
       document.querySelector('a-videosphere').setAttribute('src','#alps')
       document.querySelector('#alps').play()
@@ -56,19 +56,19 @@ function keyWordsearch(query){
       console.log(output.facts[0]);
     } 
     else if (query.toLowerCase().includes('beach') || query.toLowerCase().includes('rocky')) {
-      imageSelector.setAttribute('visible',false)
+      imageSelector.setAttribute('src', '#bitmoji2')
       textSelector.setAttribute('visible',false)
       document.querySelector('a-videosphere').setAttribute('src','#rocky-beach')
       document.querySelector('#rocky-beach').play()
     } 
     else if (query.toLowerCase().includes('water')) {
-      imageSelector.setAttribute('visible',false)
+      imageSelector.setAttribute('src', '#bitmoji2')
       textSelector.setAttribute('visible',false)
       document.querySelector('a-videosphere').setAttribute('src','#water')
       document.querySelector('#water').play()
     } 
     else if (query.toLowerCase().includes('amsterdam')) {
-      imageSelector.setAttribute('visible',false)
+      imageSelector.setAttribute('src', '#bitmoji2')
       textSelector.setAttribute('visible',false)
       document.querySelector('a-videosphere').setAttribute('src','#city')
       document.querySelector('#city').play()
