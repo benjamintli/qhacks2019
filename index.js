@@ -8,6 +8,7 @@ function startListener(){
   var imageSelector = document.querySelector('#image')
   var textSelector = document.querySelector('#text')
   document.querySelector('#facts').setAttribute('visible', false)
+  document.querySelector('#facts2').setAttribute('visible', false)
   imageSelector.setAttribute('src', '#my-image')
   var listen = generateEmoji();
   imageSelector.setAttribute('src', listen)
@@ -45,6 +46,8 @@ function keyWordsearch(query){
       var output = setFacts('temple.json')
       document.querySelector('#facts').setAttribute('visible', true)
       document.querySelector('#facts').setAttribute('value', output.facts[0])
+      document.querySelector('#facts2').setAttribute('visible', true)
+      document.querySelector('#facts2').setAttribute('value', output.facts[1])
       document.querySelector('a-videosphere').setAttribute('src','#temple')
       document.querySelector('#temple').play()
     }
@@ -54,7 +57,10 @@ function keyWordsearch(query){
       document.querySelector('a-videosphere').setAttribute('src','#rockies')
       document.querySelector('#rockies').play()
       var output = setFacts('alps.json')
+      document.querySelector('#facts').setAttribute('visible', true)
       document.querySelector('#facts').setAttribute('value', output.facts[0])
+      document.querySelector('#facts2').setAttribute('visible', true)
+      document.querySelector('#facts2').setAttribute('value', output.facts[1])
       console.log(output.facts[0]);
     } 
     else if (query.toLowerCase().includes('beach') || query.toLowerCase().includes('rocky')) {
@@ -62,6 +68,10 @@ function keyWordsearch(query){
       textSelector.setAttribute('visible',false)
       document.querySelector('a-videosphere').setAttribute('src','#rocky-beach')
       document.querySelector('#rocky-beach').play()
+
+
+      document.querySelector('#facts2').setAttribute('visible', true)
+      document.querySelector('#facts2').setAttribute('value', output.facts[1])
     } 
     else if (query.toLowerCase().includes('water')) {
       imageSelector.setAttribute('src', '#bitmoji2')
@@ -77,6 +87,8 @@ function keyWordsearch(query){
       var output = setFacts('amsterdam.json')
       document.querySelector('#facts').setAttribute('visible', true)
       document.querySelector('#facts').setAttribute('value', output.facts[0])
+      document.querySelector('#facts2').setAttribute('visible', true)
+      document.querySelector('#facts2').setAttribute('value', output.facts[1])
     } 
     else {
       imageSelector.setAttribute('visible',true)
