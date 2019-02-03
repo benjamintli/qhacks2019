@@ -35,7 +35,7 @@ function keyWordsearch(query){
       document.querySelector('a-videosphere').setAttribute('src','#temple')
       document.querySelector('#temple').play()
     }
-    else if (query.toLowerCase().includes('alps')) {
+    else if (query.toLowerCase().includes('alps') || query.toLowerCase().includes('swiss')) {
       el.setAttribute('visible',false)
       el2.setAttribute('visible',false)
       document.querySelector('a-videosphere').setAttribute('src','#alps')
