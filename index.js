@@ -48,11 +48,11 @@ function keyWordsearch(query){
       document.querySelector('a-videosphere').setAttribute('src','#temple')
       document.querySelector('#temple').play()
     }
-    else if (query.toLowerCase().includes('rockies')) {
+    else if (query.toLowerCase().includes('alps') || query.toLowerCase().includes('swiss')) {
       imageSelector.setAttribute('src', '#bitmoji2')
       textSelector.setAttribute('visible',false)
-      document.querySelector('a-videosphere').setAttribute('src','#rockies')
-      document.querySelector('#rockies').play()
+      document.querySelector('a-videosphere').setAttribute('src','#alps')
+      document.querySelector('#alps').play()
       var output = setFacts('alps.json')
       document.querySelector('#facts').setAttribute('value', output.facts[0])
       console.log(output.facts[0]);
