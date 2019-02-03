@@ -13,7 +13,7 @@ function startListener(){
   document.querySelector('#facts2').setAttribute('visible', false)
   imageSelector.setAttribute('visible',true)
   textSelector.setAttribute('visible',true)
-  textSelector.setAttribute('value','Speak into the mic')
+  textSelector.setAttribute('value','Say where you want to go!')
   // document.getElementById('not-found').style.visibility = 'hidden';
   var recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition || window.mozSpeechRecognition || window.msSpeechRecognition)();
   recognition.lang = 'en-US';
