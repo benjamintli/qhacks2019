@@ -51,7 +51,7 @@ function keyWordsearch(query){
       document.querySelector('a-videosphere').setAttribute('src','#temple')
       document.querySelector('#temple').play()
     }
-    else if (query.toLowerCase().includes('swiss') || query.toLowerCase().includes('alps')) {
+    else if (query.toLowerCase().includes('alps') || query.toLowerCase().includes('swiss')) {
       listen = generateListen("cat")
       imageSelector.setAttribute('src', listen)
       imageSelector.setAttribute('src', '#bitmoji2')
