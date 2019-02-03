@@ -62,6 +62,9 @@ function keyWordsearch(query){
       textSelector.setAttribute('visible',false)
       document.querySelector('a-videosphere').setAttribute('src','#rocky-beach')
       document.querySelector('#rocky-beach').play()
+      var output = setFacts('beach.json')
+      document.querySelector('#facts').setAttribute('visible', true)
+      document.querySelector('#facts').setAttribute('value', output.facts[0])
     } 
     else if (query.toLowerCase().includes('water')) {
       imageSelector.setAttribute('src', '#bitmoji2')
