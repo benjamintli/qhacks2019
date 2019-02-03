@@ -5,8 +5,10 @@
 //   // is_stereo: true
 // });
 function startListener(){
+
   var el = document.querySelector('#image')
   var el2 = document.querySelector('#text')
+  el.setAttribute('src', '#my-image')
   el.setAttribute('visible',true)
   el2.setAttribute('visible',true)
   el2.setAttribute('value','Speak into the mic')
@@ -30,7 +32,7 @@ function keyWordsearch(query){
     if (query.toLowerCase().includes('temple') || query.toLowerCase().includes('thailand')){
       el.setAttribute('visible',false)
       el2.setAttribute('visible',false)
-      document.querySelector('a-videosphere').setAttribute('src','#safari')
+      document.querySelector('a-videosphere').setAttribute('src','#temple')
       document.querySelector('#temple').play()
     }
     else if (query.toLowerCase().includes('alps')) {
