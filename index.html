@@ -17,6 +17,7 @@
   
 </head>
 
+<<<<<<< HEAD
 <body style ="height:100%" >
   <!-- <div class = "mainDiv align-middle" id="ui">
       <p class="col-12"> What would you like to see? </p>
@@ -24,6 +25,9 @@
 
       <h1 id='not-found'>No Results Found</h1>
   </div> -->
+=======
+<body onclick="startListener()" style ="height:100%" >
+>>>>>>> 3ecf9e944263973b824ab0d305acd8888a44ae09
   <script>
 
   </script>
@@ -31,27 +35,36 @@
     <a-entity id="river" geometry="primitive: plane" material="color: blue"
      position="-10 0 0" sound="src: url(pump.mp3); autoplay: true"></a-entity>
     <a-assets>
-      <!-- <video id="video" autoplay loop crossorigin="anonymous" controls>
-        <source src="./TEST2.mp4"></source>
-      </video> -->
-      <img id="my-image"  src="img/defualt-bitmoji.png">
+      <video id="temple" autoplay loop crossorigin="anonymous" controls>
+        <source id='stream' src="./safari.mp4"></source>
+      </video>
+      <video id="alps" autoplay loop crossorigin="anonymous" controls>
+        <source id='stream' src="./Alps.mp4"></source>
+      </video>
+      <video id="rocky-beach" autoplay loop crossorigin="anonymous" controls>
+        <source id='stream' src="./Rocky_Beach.mp4"></source>
+      </video>
+      <video id="water" autoplay loop crossorigin="anonymous" controls>
+        <source id='stream' src="./Water.mp4"></source>
+      </video>
+      <video id="city" autoplay loop crossorigin="anonymous" controls>
+        <source id='stream' src="./City.mp4"></source>
+      </video>
+      <img id="my-image"  src="https://sdk.bitmoji.com/render/panel/10215354-AUJoNkQxQWlVEr8mIwpp1lF8GTDokg-v1.png?transparent=1&palette=1&fbclid=IwAR2cDBZ0XAq0em2k6VauUi87kTGEFRi1u97-PL_7Z4Qc49GNrGeoIcpT2Bk">
     </a-assets>
-    <a-curvedimage src="#my-image" height="3.0" radius="5.7" theta-length="45"
-    rotation="0 100 0" scale="0.8 0.8 0.8"></a-curvedimage>
-    <a-text value="What would you like to see?" width="6" position="-1.0 1.6 -1.5"
-    rotation="0 -15 0"></a-text>
+      <a-curvedimage id='image' src="#my-image" height="3.0" radius="5.7" theta-length="45"
+      rotation="0 100 0" scale="0.8 0.8 0.8"></a-curvedimage>
+      <a-text id='text' value="What would you like to see?" width="6" position="-1.0 1.6 -1.5"
+      rotation="0 -15 0"></a-text>
 
-    <!-- <a-videosphere src="#video" rotation="0 180 0"></a-videosphere> -->
+    <a-videosphere id='main-vid' src="#temple" rotation="0 180 0"></a-videosphere>
   </a-scene>
-  <!-- <div id='vrview'></div> -->
-  <!-- <iframe id='yt' src="" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
-
-  <footer class="page-footer">
+  <!-- <footer class="page-footer">
     <div class = "row" style = "margin:auto; margin-bottom: 5%;text-align:center;">
       <p class = "speech-bubble col-10" id = "facts" style="padding:1%;"> Did you know? random fact. </p>
       <img class= "col-2" src = "img/point.png" style="width:100%px; height: 100%;">
     </div>
-    </footer>
+    </footer> -->
 </body>
 
 <script src='./index.js'></script>

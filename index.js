@@ -5,6 +5,14 @@
 //   // is_stereo: true
 // });
 function startListener(){
+<<<<<<< HEAD
+=======
+  var el = document.querySelector('#image')
+  var el2 = document.querySelector('#text')
+  el.setAttribute('visible',true)
+  el2.setAttribute('visible',true)
+  el2.setAttribute('value','Speak into the mic')
+>>>>>>> 3ecf9e944263973b824ab0d305acd8888a44ae09
   // document.getElementById('not-found').style.visibility = 'hidden';
   var recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition || window.mozSpeechRecognition || window.msSpeechRecognition)();
   recognition.lang = 'en-US';
@@ -20,11 +28,43 @@ function startListener(){
 }
 
 function keyWordsearch(query){
-  // Our unique API key
-  gapi.client.setApiKey('AIzaSyCFjtMcGLho2HkqVjRHxXoUlGxsP257wlc');
-  gapi.client.load('youtube', 'v3', function() {
-  makeRequest(query);
-  });
+    var el = document.querySelector('#image')
+    var el2 = document.querySelector('#text')
+    if (query.toLowerCase().includes('temple') || query.toLowerCase().includes('thailand')){
+      el.setAttribute('visible',false)
+      el2.setAttribute('visible',false)
+      document.querySelector('a-videosphere').setAttribute('src','#safari')
+      document.querySelector('#temple').play()
+    }
+    else if (query.toLowerCase().includes('alps')) {
+      el.setAttribute('visible',false)
+      el2.setAttribute('visible',false)
+      document.querySelector('a-videosphere').setAttribute('src','#alps')
+      document.querySelector('#alps').play()
+    } 
+    else if (query.toLowerCase().includes('beach') || query.toLowerCase().includes('rocky')) {
+      el.setAttribute('visible',false)
+      el2.setAttribute('visible',false)
+      document.querySelector('a-videosphere').setAttribute('src','#rocky-beach')
+      document.querySelector('#rocky-beach').play()
+    } 
+    else if (query.toLowerCase().includes('water')) {
+      el.setAttribute('visible',false)
+      el2.setAttribute('visible',false)
+      document.querySelector('a-videosphere').setAttribute('src','#water')
+      document.querySelector('#water').play()
+    } 
+    else if (query.toLowerCase().includes('amsterdam')) {
+      el.setAttribute('visible',false)
+      el2.setAttribute('visible',false)
+      document.querySelector('a-videosphere').setAttribute('src','#city')
+      document.querySelector('#city').play()
+    } 
+    else {
+      el.setAttribute('visible',true)
+      el2.setAttribute('visible',true)
+      el2.setAttribute('value','Didn\'t catch that')
+    }
 }
 function makeRequest(query) {
   var request = gapi.client.youtube.search.list({
@@ -44,14 +84,6 @@ function makeRequest(query) {
           console.log(srchItems)
           document.getElementById('ui').style.display = 'none';
           document.getElementById('yt').style.display = 'block';
-          // document.getElementById('yt').src = 'https://www.youtube.com/embed/' + srchItems[0].id.videoId + '?autoplay=1'
-          // $.each(srchItems, function(index, item) {
-          // vidTitle = item.snippet.title;
-          // vidThumburl =  item.snippet.thumbnails.default.url;
-          // vidThumbimg = '<pre><img id="thumb" src="'+vidThumburl+'" alt="No  Image Available." style="width:204px;height:128px"></pre>';
-
-          // $('#results').append('<pre>' + vidTitle + vidThumbimg +  '</pre>');
-  // })
 })
 }
 
