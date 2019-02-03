@@ -68,8 +68,9 @@ function keyWordsearch(query){
       textSelector.setAttribute('visible',false)
       document.querySelector('a-videosphere').setAttribute('src','#rocky-beach')
       document.querySelector('#rocky-beach').play()
-
-
+      var output = setFacts('beach.json')
+      document.querySelector('#facts').setAttribute('visible', true)
+      document.querySelector('#facts').setAttribute('value', output.facts[0])
       document.querySelector('#facts2').setAttribute('visible', true)
       document.querySelector('#facts2').setAttribute('value', output.facts[1])
     } 
