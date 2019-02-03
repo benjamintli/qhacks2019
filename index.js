@@ -83,30 +83,9 @@ function keyWordsearch(query){
       textSelector.setAttribute('visible',true)
       listen = generateListen("hm");
       imageSelector.setAttribute('src', listen)
-      textSelector.setAttribute('value','Didn\'t catch that')
+      textSelector.setAttribute('value','Didn\'t catch that \nPress the button and try again')
     }
 }
-function makeRequest(query) {
-  var request = gapi.client.youtube.search.list({
-          q: query,
-          part: 'snippet',
-          maxResults: 10,
-          type: 'video',
-          channelId: 'UC6AXBF-78lNa3_TjAIWZWmQ' //channel for teh VR videos
-  });
-  request.execute(function(response)  {
-          $('#results').empty()
-          var srchItems = response.result.items;
-          if (!srchItems || srchItems.length < 1) {
-            document.getElementById('not-found').style.visibility = 'visible';
-            return
-          }
-          console.log(srchItems)
-          document.getElementById('ui').style.display = 'none';
-          document.getElementById('yt').style.display = 'block';
-})
-}
-
 
 function queryWikipedia(place) {
   var URL = 'https://en.wikipedia.org/w/api.php?format=json&action=query&prop=extracts&exintro&explaintext&redirects=1';
