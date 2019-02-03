@@ -9,10 +9,8 @@ function startListener(){
   var textSelector = document.querySelector('#text')
   document.querySelector('#facts').setAttribute('visible', false)
   var listen = generateListen("listen");
- 
-  document.querySelector('#facts2').setAttribute('visible', false)
-  
   imageSelector.setAttribute('src', listen)
+  document.querySelector('#facts2').setAttribute('visible', false)
   imageSelector.setAttribute('visible',true)
   textSelector.setAttribute('visible',true)
   textSelector.setAttribute('value','Speak into the mic')
@@ -42,7 +40,8 @@ function keyWordsearch(query){
     var imageSelector = document.querySelector('#image')
     var textSelector = document.querySelector('#text')
     if (query.toLowerCase().includes('temple') || query.toLowerCase().includes('thailand')){
-      imageSelector.setAttribute('src', '#bitmoji2')
+      listen = generateListen("pointing_look")
+      imageSelector.setAttribute('src', listen)
       textSelector.setAttribute('visible',false)
       var output = setFacts('temple.json')
       document.querySelector('#facts').setAttribute('visible', true)
@@ -53,7 +52,8 @@ function keyWordsearch(query){
       document.querySelector('#temple').play()
     }
     else if (query.toLowerCase().includes('rockies')) {
-      imageSelector.setAttribute('src', '#bitmoji2')
+      listen = generateListen("cat")
+      imageSelector.setAttribute('src', listen)
       textSelector.setAttribute('visible',false)
       document.querySelector('a-videosphere').setAttribute('src','#rockies')
       document.querySelector('#rockies').play()
@@ -65,7 +65,8 @@ function keyWordsearch(query){
       console.log(output.facts[0]);
     } 
     else if (query.toLowerCase().includes('beach') || query.toLowerCase().includes('rocky')) {
-      imageSelector.setAttribute('src', '#bitmoji2')
+      listen = generateListen("cat")
+      imageSelector.setAttribute('src', listen)
       textSelector.setAttribute('visible',false)
       document.querySelector('a-videosphere').setAttribute('src','#rocky-beach')
       document.querySelector('#rocky-beach').play()
@@ -76,13 +77,15 @@ function keyWordsearch(query){
       document.querySelector('#facts2').setAttribute('value', output.facts[1])
     } 
     else if (query.toLowerCase().includes('water')) {
-      imageSelector.setAttribute('src', '#bitmoji2')
+      listen = generateListen("wow")
+      imageSelector.setAttribute('src', listen)
       textSelector.setAttribute('visible',false)
       document.querySelector('a-videosphere').setAttribute('src','#water')
       document.querySelector('#water').play()
     } 
     else if (query.toLowerCase().includes('amsterdam')) {
-      imageSelector.setAttribute('src', '#bitmoji2')
+      listen = generateListen("cat")
+      imageSelector.setAttribute('src', listen)
       textSelector.setAttribute('visible',false)
       document.querySelector('a-videosphere').setAttribute('src','#city')
       document.querySelector('#city').play()
