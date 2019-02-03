@@ -44,7 +44,7 @@ function keyWordsearch(query){
       var output = setFacts('temple.json')
       document.querySelector('#facts').setAttribute('visible', true)
       document.querySelector('#facts').setAttribute('value', output.facts[0])
-      document.querySelector('a-videosphere').setAttribute('src','#safari')
+      document.querySelector('a-videosphere').setAttribute('src','#temple')
       document.querySelector('#temple').play()
     }
     else if (query.toLowerCase().includes('alps')) {
