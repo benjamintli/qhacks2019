@@ -1,0 +1,12 @@
+- Welcome to Roam an imersive VR web app that allows you to experience the world around you
+-ROAM allows People who are no longer able to travel the opportunity to view many locations
+- ROAM has your bitmoji as a tour Guide and gives you interesting facts about each place you visit
+
+- So lets put the glasses on and put you in the world pf ROAM
+- first off what you will see is the starting screen which is space, you can look around and enjoy the scenery. But you want to see something else.
+  click the button the video should stop and once it stops say "Take me to Amsterdam". If you look around you will notice some facts about the location you are currently in with your bitmoji pointing
+  them out. check them out, now lets go to the swiss alps. Press the button and "say take me to the swiss alps"
+
+- This tool can also be used for educational purposes showing students places in the world they could be learning about.
+
+Now lets go to the beaches of new zealand, by saying "take me to the beach"!
